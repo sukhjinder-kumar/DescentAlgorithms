@@ -14,6 +14,16 @@ To use this first clone the repo, then follow these steps -
 
 ## Documentation
 
-- UI (Explain)
+- Input for the algorithms are given in the sidebar.
+
+    1. Dimension: $$F: \mathcal{R}^n \rightarrow \mathcal{R}$$, here n is the dimension
+
+    2. Function: User input function via text input. It is converted to python function using sympy library. One must note that python syntax for defining function must be used here.
+
+    3. Intial Point: User input co-ordinates of intial point as `,` seprated numbers. Like `0, 1, 0`, it is converted to a numpy vector
+
+    4. Number of iteration: It is always integer, currently min=1 and max=100.
+
+    5. Step size: It is float with precision upto 2 decimals. Min=0.00 and max=1.00
 
 - Each new algorithm has a seprate file in algorithm subfolder.
