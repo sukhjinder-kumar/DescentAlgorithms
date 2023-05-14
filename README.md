@@ -8,9 +8,11 @@ To use this first clone the repo, then follow these steps -
 
 1. Create a virtual environment (Recommended). And please note python3.9.7 seems to have some compatability issues with streamlit library. You can use python3.10 for instance. Example if you have venv installed, use `python3.10 -m venv <environment name>`
 
-2. Install dependencies: `pip install -r requirements.txt` (Ensure you are in root directory of above code)
+2. Use `source <environment_name>/bin/activate` to use the environment
 
-3. Run the app: `streamlit run index.py` 
+3. Install dependencies: `pip install -r requirements.txt` (Ensure you are in root directory of above code)
+
+4. Run the app: `streamlit run index.py` 
 
 ## Documentation
 
