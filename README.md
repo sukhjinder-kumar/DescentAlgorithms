@@ -16,7 +16,7 @@ To use this first clone the repo, then follow these steps -
 
 - Input for the algorithms are given in the sidebar.
 
-    1. Dimension: $$F: \mathcal{R}^n \rightarrow \mathcal{R}$$, here n is the dimension
+    1. Dimension: $F: \mathcal{R}^n \rightarrow \mathcal{R}$, here n is the dimension
 
     2. Function: User input function via text input. It is converted to python function using sympy library. One must note that python syntax for defining function must be used here.
 

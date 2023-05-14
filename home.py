@@ -11,7 +11,7 @@ st.write("# Descent Algorithms")
 st.divider()
 
 ##############################################
-# Input Parameters 
+# Input Parameters
 ##############################################
 
 st.sidebar.write("## Input")
@@ -46,3 +46,22 @@ num_iter = st.sidebar.slider(
 step_size = st.sidebar.slider(
         "5. Select step_size: ",
         value=1.0)
+
+##############################################
+# Algorithms
+##############################################
+
+algo_list = ["GradientDescent"]
+
+algo = st.selectbox(
+        "Select a Descent algorithm: ",
+        options=algo_list,
+        index=0)
+
+# TODO
+# 1. Create a general function def for Algorithms.
+# What to take input, what to output
+# 2. Figure out how to import and export those functions
+# 3. Visualization for 1, and 2-Dimensional spaces.
+# Idealy with points on the surface of function and a nice
+# animation showing movement of the points.
