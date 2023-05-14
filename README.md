@@ -16,7 +16,7 @@ To use this first clone the repo, then follow these steps -
 
 - Input for the algorithms are given in the sidebar.
 
-    1. Dimension: $F: \mathcal{R}^n \rightarrow \mathcal{R}$, here n is the dimension
+    1. Dimension: $F: \mathcal{R}^n \rightarrow \mathcal{R}$, here n is the dimension. For now it is limited to 1 and 2. To allow for higher dimension requires a new way of taking function input. As function needs to be represented by variables like x, y. A protocol must set for variable name, a automated reading and evaluation mechanics must be devised. But this comes at cost, as than vectorized functions take a toll.
 
     2. Function: User input function via text input. It is converted to python function using sympy library. One must note that python syntax for defining function must be used here.
 
@@ -27,3 +27,5 @@ To use this first clone the repo, then follow these steps -
     5. Step size: It is float with precision upto 2 decimals. Min=0.00 and max=1.00
 
 - Each new algorithm has a seprate file in algorithm subfolder.
+
+    - The function should have parameters (dim, func, x_0, num_iter, step_size) and output history (collection of iterated points)

@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import sympy
+from algorithms.gradientdescent import GD
 #from matplotlib import pyplot as plt
 
 st.set_page_config(
@@ -17,13 +18,17 @@ st.divider()
 st.sidebar.write("## Input")
 
 # Input dimension of domain of function
-dim = st.sidebar.number_input(
+n = st.sidebar.radio(
     "1. Enter dimension of function's domain (default = 1)",
-    value=1)
+    ("1", "2"),
+    horizontal=True,
+    index=0)
+dim = int(n)
 
 # Input function definition
 func_str = st.sidebar.text_input(
-        "2. Enter function (in python format, like x**3 + sin(x)): ",
+        "2. Enter function (in python format, like x\*\*3 + sin(x) \
+                or x\*\*2 + y\*\*2): ",
         value="x**2")
 func = sympy.sympify(func_str)
 # st.sidebar.write(func.subs({'x': 2}).evalf())
@@ -58,10 +63,18 @@ algo = st.selectbox(
         options=algo_list,
         index=0)
 
+if algo == "GradientDescent":
+    history = GD(dim, func, x_0, num_iter, step_size)
+else:
+    st.write("Under developement")
+
+##############################################
+# Plotting
+##############################################
+
+st.write(history)
+
 # TODO
-# 1. Create a general function def for Algorithms.
-# What to take input, what to output
-# 2. Figure out how to import and export those functions
-# 3. Visualization for 1, and 2-Dimensional spaces.
+# Visualization for 1, and 2-Dimensional spaces.
 # Idealy with points on the surface of function and a nice
 # animation showing movement of the points.
