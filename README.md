@@ -1,7 +1,5 @@
 # Descent Algorithms
 
----
-
 ## Setup 
 
 This is a webapp that shows Gradient descent and its variants via interactive examples.
@@ -15,5 +13,7 @@ To use this first clone the repo, then follow these steps -
 3. Run the app: `streamlit run index.py` 
 
 ## Documentation
+
+- UI (Explain)
 
 - Each new algorithm has a seprate file in algorithm subfolder.
