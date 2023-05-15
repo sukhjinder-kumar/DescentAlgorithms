@@ -31,3 +31,13 @@ To use this first clone the repo, then follow these steps -
 - Each new algorithm has a seprate file in algorithm subfolder.
 
     - The function should have parameters (dim, func, x_0, num_iter, step_size) and output history (collection of iterated points)
+
+- Following Algorithms are implemented here:
+    
+    1. Gradient Descent
+
+## Future Work
+
+1. Visualization: Currently matplotlib is being used for both 2D and 3D plot. However `streamlit.pyplot` api doesn't support additional features like zoom in/out, and rotate (for 3D plots) making it not ideal. Plotly api in streamlit however do show such features, maybe it is the way to go. 
+
+2. Higher dimensions: For now only 1D and 2D input dimension are accepted. The reason being the function reader. If higher dimensions is allowed than one must introduce more standarized symbols for each axis. 
