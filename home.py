@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import sympy
 from algorithms.gradientdescent import GD
-#from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt
 
 st.set_page_config(
         page_title = "DescentAlgorithms",
@@ -39,6 +39,8 @@ intial_point = st.sidebar.text_input(
         "3. Enter intial point where each coord is , seprated: ",
         value=def_int_point)
 x_0 = np.array(tuple(intial_point.split(",")), dtype=float).reshape(dim, 1)
+if dim == 1:
+    x_0 = float(x_0)
 
 # Input number of iterations
 num_iter = st.sidebar.slider(
@@ -50,7 +52,11 @@ num_iter = st.sidebar.slider(
 # Input step size
 step_size = st.sidebar.slider(
         "5. Select step_size: ",
-        value=1.0)
+        value=1.0,
+        min_value=0.0,
+        max_value=2.0,
+        step=0.01)
+
 
 ##############################################
 # Algorithms
@@ -72,7 +78,39 @@ else:
 # Plotting
 ##############################################
 
-st.write(history)
+# Note - Viz is quite bad, a feature to zoom and
+# focus is essential. Ig plotly has that feature
+
+if st.checkbox("Show raw history"):
+    st.write(history)
+
+if dim == 1:
+    # Function plot
+    r_lim = np.abs(2*x_0)+1  # Plus 1 to avoid error for 0
+    l_lim = -r_lim
+
+    num_pts = 4*int(r_lim)*10
+    x_values = np.linspace(l_lim, r_lim, num_pts)
+    y_values = np.array([
+        func.subs({'x': x_val}).evalf() for x_val in x_values])
+    fig, ax = plt.subplots()
+    ax.set_xlim(l_lim, r_lim)
+    ax.set_ylim(bottom=float(np.amin(y_values)), top=float(np.amax(y_values)))
+    ax.plot(x_values, y_values, color="black")
+    ax.set_title(f"{func}")
+    ax.set_xlabel("x-axis")
+    ax.set_ylabel("F(x)")
+
+    # History plot
+    func_val = np.array([
+        func.subs({'x': x_val}).evalf() for x_val in history])
+    ax.plot(history, func_val, color="blue", label="Iterates")
+    ax.legend()
+
+    st.pyplot(fig)
+
+else:
+    st.write("In progress")
 
 # TODO
 # Visualization for 1, and 2-Dimensional spaces.
