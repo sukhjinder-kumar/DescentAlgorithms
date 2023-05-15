@@ -12,7 +12,7 @@ To use this first clone the repo, then follow these steps -
 
 3. Install dependencies: `pip install -r requirements.txt` (Ensure you are in root directory of above code)
 
-4. Run the app: `streamlit run index.py` 
+4. Run the app: `streamlit run home.py` 
 
 ## Documentation
 
