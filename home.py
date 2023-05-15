@@ -3,7 +3,7 @@ import numpy as np
 import sympy
 
 from algorithms.gradientdescent import GD
-from utils.plot_matplotlib import plot_matplotlib
+from utils.plot_matplotlib import plot_matplotlib_2D, plot_matplotlib_3D
 
 st.set_page_config(
         page_title = "DescentAlgorithms",
@@ -86,11 +86,6 @@ if st.checkbox("Show raw history"):
     st.write(history)
 
 if dim == 1:
-    plot_matplotlib(history, func)
+    plot_matplotlib_2D(history, func)
 else:
-    st.write("In progress")
-
-# TODO
-# Visualization for 1, and 2-Dimensional spaces.
-# Idealy with points on the surface of function and a nice
-# animation showing movement of the points.
+    plot_matplotlib_3D(history, func)
