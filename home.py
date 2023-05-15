@@ -4,7 +4,6 @@ import sympy
 
 from algorithms.gradientdescent import GD
 from utils.plot_matplotlib import plot_matplotlib
-from utils.plot_plotly import plot_plotly
 
 st.set_page_config(
         page_title = "DescentAlgorithms",
@@ -88,7 +87,6 @@ if st.checkbox("Show raw history"):
 
 if dim == 1:
     plot_matplotlib(history, func)
-    plot_plotly(history, func)
 else:
     st.write("In progress")
 
