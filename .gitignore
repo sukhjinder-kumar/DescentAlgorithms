@@ -2,5 +2,4 @@
 Streamlit_env/
 
 # Byte-compiled / optimized / DLL files
-utils/__pycache__/
-algorithms/__pycache__/
+__pycache__/
